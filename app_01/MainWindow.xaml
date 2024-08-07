@@ -4,34 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:app_01"
-        xmlns:userControls="clr-namespace:app_01.View.UserControls"
-        xmlns:userControle_input="clr-namespace:app_01.View.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="300">
-    <Grid>
-        
-        <!-- //List of textboxes with placeholder control and databiding.
+        WindowStyle="ThreeDBorderWindow" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="Tutorials" Height="450" Width="400">
+    <Grid Background="DarkBlue">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>        
-        <userControle_input:clearble_textbox Grid.Row="1" Width="250" Height="40" Placeholder="First Name"/>
-        <userControle_input:clearble_textbox Grid.Row="2" Width="250" Height="40" Placeholder="Last Name"/>
-        <userControle_input:clearble_textbox Grid.Row="3" Width="250" Height="40" Placeholder="Email"/>
-        <userControle_input:clearble_textbox Grid.Row="4" Width="250" Height="40" Placeholder="Number"/>-->
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-                
-        <Button Name="btnSet" Click="btnSet_Click" Content="Fire Content" Width="100" Height="40"/>
-        
-        <TextBlock Grid.Row="2" Name="tbResult" FontSize="16" Text="{Binding BoundText}"
-                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="0">
+            <TextBox Name="tbTitle" Text="Tutorials WPF" HorizontalAlignment="Center" VerticalAlignment="Center"
+                     FontSize="20" BorderThickness="0" Background="Transparent" Foreground="WhiteSmoke"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel Background="WhiteSmoke" Margin="20,0,20,20">
+                <Button x:Name="btListView" Content="List View" Click="btListView_Click" Width="200" Height="25" Margin="10"/>                       
+                <Button x:Name="btListViewObservable" Content="List View (Databinding)" Click="btListViewObservable_Click" Width="200" Height="25" Margin="10"/>
+                <Button x:Name="btExpandable" Content="Expander" Click="btExpandable_Click" Width="200" Height="25" Margin="10"/>
+                <Button x:Name="btWindowStyle" Content="Window Style" Click="btWindowStyle_Click" Width="200" Height="25" Margin="10"/>
+                <Button x:Name="btReturnInfo" Content="Return Info" Click="btReturnInfo_Click" Width="200" Height="25" Margin="10"/>
+                <Button x:Name="btReusableStyleResources" Content="Reusable Styles" Click="btReusableStyleResources_Click" Width="200" Height="25" Margin="10"/>
+                <Button x:Name="btMVVMClass" Content="MVVM Example (Simple Inventory)" Click="btMVVMClass_Click" Width="200" Height="25" Margin="10"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

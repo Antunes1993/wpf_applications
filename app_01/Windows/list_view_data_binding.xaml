@@ -1,0 +1,27 @@
+﻿<Window x:Class="app_01.Windows.list_view_data_binding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:app_01.Windows"
+        mc:Ignorable="d"
+        Title="list_view_data_binding" Height="450" Width="800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="tbEntry" Height="35" FontSize="16" Margin="5,0,0,0"/>
+        <Button Grid.Column="1" Name="btnAdd" Height="30" Content="Add" Click="btnAdd_Click" Margin="10,10,275,10"/>
+        <Button Grid.Column="1" Name="btnDel" Height="30" Content="Delete" Click="btnDel_Click" Margin="130,10,162,10"/>
+        <Button Grid.Column="1" Name="btnClr" Height="30" Content="Clear" Click="btnClr_Click" Margin="243,10,36,10"/>
+        <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Multiple" ItemsSource="{Binding Entries}"/>
+
+    </Grid>
+</Window>
